@@ -1,9 +1,11 @@
 import random
+import time
+from w1thermsensor import W1ThermSensor
+sensor = W1ThermSensor()
 
-START   = -5;
-STOP    = 30;
 
-# stub for temperature sensor
+
 def read_temp():
-    temp = random.randrange(START, STOP)
-    return temp
+    temperature = sensor.get_temperature()
+    print("The temperature is %s celsius" % temperature)
+    return temperature
